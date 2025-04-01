@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    overflow: hidden; /* Prevent scrollbars */
+    background-color: #111;
+    color: #eee;
+    display: flex; /* Use flexbox for layout */
+}
+
+#container {
+    width: 80vw; /* 80% of viewport width */
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    background-color: #000;
+}
+
+#controls {
+    width: 20vw; /* 20% of viewport width */
+    height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #282828;
+    overflow-y: auto; /* Allow scrolling if controls overflow */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between control elements */
+}
+
+#controls h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #0f0;
+}
+
+#controls label {
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+#controls input[type="range"],
+#controls input[type="color"],
+#controls select {
+    width: calc(100% - 10px); /* Adjust width */
+    margin-top: 4px;
+}
+
+#controls input[type="checkbox"] {
+    margin-top: 4px;
+    margin-right: 5px;
+    vertical-align: middle; /* Align checkbox nicely with label */
+}
+
+#controls span {
+    font-size: 0.9em;
+    margin-left: 5px;
+    color: #aaa;
+}
+
+#controls p {
+    margin-top: 15px;
+    font-size: 0.8em;
+    color: #ccc;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+/* Make disabled elements look distinct */
+#controls select:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}

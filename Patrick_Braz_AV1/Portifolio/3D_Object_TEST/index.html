@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador 3D Wireframe Customizável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container"></div>
+
+    <div id="controls">
+        <h2>Controles</h2>
+
+        <label for="geometryType">Forma:</label>
+        <select id="geometryType">
+            <option value="sphere">Esfera</option>
+            <option value="box">Cubo</option>
+            <option value="cylinder">Cilindro</option>
+            <option value="torus">Toro (Donut)</option>
+            <option value="icosahedron">Icosaedro</option>
+        </select>
+
+        <label for="diameter">Diâmetro/Tamanho:</label>
+        <input type="range" id="diameter" min="0.5" max="5" step="0.1" value="2">
+        <span id="diameterValue">2.0</span>
+
+        <label for="segments">Detalhe/Faces:</label>
+        <input type="range" id="segments" min="3" max="64" step="1" value="16">
+        <span id="segmentsValue">16</span>
+
+        <label for="color">Cor Objeto:</label> <!-- Label ligeiramente modificada -->
+        <input type="color" id="color" value="#00ff00">
+
+        <label for="wireframe">Wireframe:</label>
+        <input type="checkbox" id="wireframe" checked>
+
+        <label for="shading">Shading (se não wireframe):</label>
+        <select id="shading" disabled>
+            <option value="smooth">Suave (Smooth)</option>
+            <option value="flat">Plano (Flat)</option>
+        </select>
+
+        <label for="lightIntensity">Intensidade da Luz:</label>
+        <input type="range" id="lightIntensity" min="0" max="3" step="0.1" value="1.0">
+        <span id="lightIntensityValue">1.0</span>
+
+        <!-- ===== NOVO CONTROLE DE COR DA LUZ ===== -->
+        <label for="lightColor">Cor da Luz:</label>
+        <input type="color" id="lightColor" value="#ffffff"> <!-- Começa branca -->
+        <!-- ========================================= -->
+
+        <label for="autoRotate">Rotação Automática Objeto:</label>
+        <input type="checkbox" id="autoRotate">
+
+        <label for="rotateX">Rotação X Objeto Manual:</label>
+        <input type="range" id="rotateX" min="-180" max="180" step="1" value="0">
+        <span id="rotateXValue">0</span>°
+
+        <label for="rotateY">Rotação Y Objeto Manual:</label>
+        <input type="range" id="rotateY" min="-180" max="180" step="1" value="0">
+        <span id="rotateYValue">0</span>°
+
+        <label for="rotateZ">Rotação Z Objeto Manual:</label>
+        <input type="range" id="rotateZ" min="-180" max="180" step="1" value="0">
+        <span id="rotateZValue">0</span>°
+
+        <p><b>Interação:</b> Orbitar (arrastar esquerdo), Zoom (scroll), Pan (arrastar direito), <b>Arrastar Esfera Amarela (mover luz)</b></p>
+    </div>
+
+    <!-- Import maps (sem mudanças aqui) -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

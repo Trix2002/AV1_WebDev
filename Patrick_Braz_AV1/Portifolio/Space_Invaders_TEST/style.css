@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: column; /* Empilha título e jogo */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    overflow: hidden; /* Evita barras de rolagem */
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #0f0; /* Verde típico de arcade */
+}
+
+#game-container {
+    position: relative; /* Para posicionar a mensagem */
+}
+
+canvas {
+    border: 2px solid #0f0; /* Borda verde */
+    background-color: #000; /* Fundo preto */
+    display: block; /* Remove espaço extra abaixo do canvas */
+}
+
+#ui {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #222; /* Fundo para a UI */
+    border-left: 2px solid #0f0;
+    border-right: 2px solid #0f0;
+    border-bottom: 2px solid #0f0;
+    /* Garante que a largura corresponda ao canvas, menos as bordas */
+    width: calc(800px - 4px);
+    box-sizing: border-box;
+}
+
+#message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff0; /* Amarelo */
+    font-size: 2.5em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: none; /* Começa escondido */
+    z-index: 10;
+}
